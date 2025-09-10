@@ -1,6 +1,4 @@
-<p align="center">
-<img src="URL_DA_SUA_IMAGEM_DE_CAPA_AQUI.png" alt="Capa do Projeto Bot WhatsApp">
-</p>
+
 
 <p align="center">
 <img alt="Feito com" src="https://img.shields.io/badge/Feito%20com-Python-blue?style=for-the-badge&logo=python">
@@ -9,9 +7,11 @@
 </p>
 
 💻 Sobre o Projeto
+
 Este é um projeto de estudos para a criação de um bot que automatiza o envio de mensagens no WhatsApp Web. A aplicação utiliza Selenium para controlar o navegador e interagir com a interface da plataforma de forma automatizada.
 
 🛠️ Tecnologias
+
 As seguintes ferramentas e tecnologias foram utilizadas na construção do projeto:
 
 Python 3.10+
@@ -21,9 +21,11 @@ Selenium
 WebDriver Manager
 
 🚀 Como Executar o Projeto
+
 Siga os passos abaixo para rodar a aplicação em sua máquina local.
 
 Pré-requisitos
+
 Antes de começar, você vai precisar ter instalado em sua máquina:
 
 Git
@@ -32,21 +34,27 @@ Python 3.8+
 
 Google Chrome
 
+
 1. Clone o repositório
 Bash
 
 git clone https://github.com/aldhemir/bot_whatsapp.git
 cd bot_whatsapp
+
 2. (Opcional) Crie e ative um ambiente virtual
 Bash
 
 # Para Windows
 python -m venv venv
 .\venv\Scripts\activate
+
+
 3. Instale as dependências
 Bash
 
 pip install -r requirements.txt
+
+
 4. Configure a mensagem e os contatos
 Abra o arquivo bot/bot.py. Dentro da classe WhatsappBot, no método __init__, altere as variáveis self.message e self.contact.
 
