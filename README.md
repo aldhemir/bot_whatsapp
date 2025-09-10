@@ -6,89 +6,106 @@
 <img alt="Licença" src="https://img.shields.io/badge/Licença-MIT-red?style=for-the-badge">
 </p>
 
-💻 Sobre o Projeto
+
+## 💻 Sobre o Projeto
 
 Este é um projeto de estudos para a criação de um bot que automatiza o envio de mensagens no WhatsApp Web. A aplicação utiliza Selenium para controlar o navegador e interagir com a interface da plataforma de forma automatizada.
 
-🛠️ Tecnologias
+-----
+
+## 🛠️ Tecnologias
 
 As seguintes ferramentas e tecnologias foram utilizadas na construção do projeto:
 
-Python 3.10+
+  * **Python 3.10+**
+  * **Selenium**
+  * **WebDriver Manager**
 
-Selenium
+-----
 
-WebDriver Manager
-
-🚀 Como Executar o Projeto
+## 🚀 Como Executar o Projeto
 
 Siga os passos abaixo para rodar a aplicação em sua máquina local.
 
-Pré-requisitos
+#### **Pré-requisitos**
 
 Antes de começar, você vai precisar ter instalado em sua máquina:
 
-Git
+  * [Git](https://git-scm.com)
+  * [Python 3.8+](https://www.python.org/downloads/)
+  * Google Chrome
 
-Python 3.8+
+#### **1. Clone o repositório**
 
-Google Chrome
-
-
-1. Clone o repositório
-Bash
-
+```bash
 git clone https://github.com/aldhemir/bot_whatsapp.git
 cd bot_whatsapp
+```
 
-2. (Opcional) Crie e ative um ambiente virtual
-Bash
+#### **2. (Recomendado) Crie e ative um ambiente virtual**
 
+```bash
 # Para Windows
 python -m venv venv
 .\venv\Scripts\activate
+```
 
+#### **3. Instale as dependências**
 
-3. Instale as dependências
-Bash
-
+```bash
 pip install -r requirements.txt
+```
 
+#### **4. Configure a mensagem e os contatos**
 
-4. Configure a mensagem e os contatos
-Abra o arquivo bot/bot.py. Dentro da classe WhatsappBot, no método __init__, altere as variáveis self.message e self.contact.
+Abra o arquivo `zapbot.py` e edite as variáveis no bloco de execução principal, **ao final do arquivo**:
 
-Python
+```python
+# --- Bloco de Execução Principal ---
+if __name__ == '__main__':
+    # --- ÁREA DE CONFIGURAÇÃO ---
+    contatos_alvo = ["Nome Exato do Contato 1", "Nome do Grupo 2"]
+    mensagem_para_enviar = "Sua mensagem aqui."
+    # ---------------------------
 
-class WhatsappBot:
-    def __init__(self):
-        # --- ÁREA DE CONFIGURAÇÃO ---
-        self.message = "Sua mensagem aqui"
-        self.contact = ["Nome Exato do Contato 1", "Nome do Grupo 2"]
-        # ---------------------------
-        
-        self.options = webdriver.ChromeOptions()
-        self.options.add_argument('lang=pt-br')
-        servico = Service(ChromeDriverManager().install())
-        self.driver = webdriver.Chrome(service=servico, options=self.options)
-Importante: Os nomes na lista self.contact devem ser idênticos aos que aparecem no seu WhatsApp.
+    # Cria a instância do bot e chama o método para enviar a mensagem
+    bot = WhatsappBot()
+    bot.send_message(contatos=contatos_alvo, mensagem=mensagem_para_enviar)
+```
 
-5. Execute a aplicação
-Bash
+**Importante:** Os nomes na lista `contatos_alvo` devem ser idênticos aos que aparecem no seu WhatsApp.
 
-python bot/bot.py
+#### **5. Execute a aplicação**
+
+```bash
+python zapbot.py
+```
+
 Ao executar, uma janela do Chrome abrirá. Escaneie o QR Code com seu celular para fazer login no WhatsApp Web. Após o login, o bot iniciará os envios.
 
-📸 Demonstração
-<p align="center">
-<img src="URL_DO_SEU_GIF_DE_DEMONSTRAÇÃO_AQUI.gif" alt="Demonstração do Bot">
-</p>
+-----
 
-⚠️ Aviso Importante
-Este projeto foi desenvolvido para fins educacionais. A automação de contas de usuário pode violar os Termos de Serviço do WhatsApp, podendo resultar no bloqueio da sua conta. Use por sua conta e risco.
+## 📸 Demonstração
 
-📝 Licença
-Este projeto está sob a licença MIT.
+\<p align="center"\>
+\<img src="URL\_DO\_SEU\_GIF\_DE\_DEMONSTRAÇÃO\_AQUI.gif" alt="Demonstração do Bot"\>
+\</p\>
+
+-----
+
+## ⚠️ Aviso Importante
+
+Este projeto foi desenvolvido exclusivamente para **fins educacionais**. A automação de contas de usuário pode violar os **Termos de Serviço do WhatsApp**.
+
+O uso indevido desta ferramenta para envio de spam, mensagens em massa ou qualquer outra atividade maliciosa é de **inteira responsabilidade do usuário**. O autor não se responsabiliza por qualquer consequência, incluindo, **bloqueio de contas** ou quaisquer outras perdas e danos. **Use por sua conta e risco.**
+
+-----
+
+## 📝 Licença
+
+Este projeto está sob a licença [MIT](https://www.google.com/search?q=LICENSE).
+
+-----
 
 <p align="center">
 Feito com ❤️ por <strong>Aldhemir</strong>
